@@ -16,10 +16,7 @@ public class Main {
 
                     break;
                 case 3:
-                    System.out.println("1. .csv");
-                    System.out.println("2. .json");
-                    System.out.println("3. .xml");
-                    System.out.print("¿A qué extensión quieres convertir?: ");
+                    menu2();
                     int b = sc.nextInt();
                     switch (b) {
                         case 1:
@@ -59,5 +56,12 @@ public class Main {
         System.out.println("3. Convertir op ...");
         System.out.println("4. Salir");
         System.out.print("Elige una opción: ");
+    }
+
+    public static void menu2() {
+        System.out.println("1. .csv");
+        System.out.println("2. .json");
+        System.out.println("3. .xml");
+        System.out.print("¿A qué extensión quieres convertir?: ");
     }
 }

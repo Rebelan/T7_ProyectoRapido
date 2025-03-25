@@ -1,3 +1,4 @@
+package src;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +14,8 @@ public class Main {
 
                     break;
                 case 2:
-
+                    System.out.println("Indique el nombre del fichero que se va a leer");
+                    System.out.println("Nota: Indique la extensión del fichero en el nombre con .extension");
                     break;
                 case 3:
                     menu2();

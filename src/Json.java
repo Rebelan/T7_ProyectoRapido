@@ -6,11 +6,11 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Xml {
+public class Json {
 
-    public static ArrayList<HashMap<String, Integer>> LecturaFicheroXML(File fileXML) {
+    public static ArrayList<HashMap<String, Integer>> LecturaFicheroJSON(File fileJSON) {
         ArrayList<HashMap<String, Integer>> listaInfoFichero = new ArrayList<HashMap<String, Integer>>();
-        try (BufferedReader br = new BufferedReader(new FileReader(fileXML))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileJSON))) {
             String linea;
             linea = br.readLine();
             linea = br.readLine();
@@ -20,18 +20,18 @@ public class Xml {
                 if (linea.equals(objeto)) {
                     infoFichero = new HashMap<String, Integer>();
                 }
-                if (!linea.equals("/" + objeto)) {
-                    String[] palabras = linea.split("<[^>]+>");
+                if (!linea.equals("},")) {
+                    String[] palabras = linea.split("");
                     for (int i = 0; i < palabras.length; i++) {
                         infoFichero.put(palabras[i], i);
                     }
                 } else
                     listaInfoFichero.add(infoFichero);
             } while ((linea = br.readLine()) != null);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return listaInfoFichero;
+
+        return null;
     }
 }

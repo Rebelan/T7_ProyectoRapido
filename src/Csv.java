@@ -9,16 +9,16 @@ import java.util.HashMap;
 
 public class Csv {
 
-    public static ArrayList<HashMap<String, Integer>> LecturaFicheroCSV(File ficheroCSV) {
+    public static ArrayList<HashMap<String, String>> LecturaFicheroCSV(File ficheroCSV) {
 
-        ArrayList<HashMap<String, Integer>> listaInfoFichero = new ArrayList<HashMap<String, Integer>>();
+        ArrayList<HashMap<String, String>> listaInfoFichero = new ArrayList<HashMap<String, String>>();
         try (BufferedReader br = new BufferedReader(new FileReader(ficheroCSV))) {
             String linea;
             while ((linea = br.readLine()) != null) {
-                HashMap<String, Integer> infoFichero = new HashMap<String, Integer>();
+                HashMap<String, String> infoFichero = new HashMap<String, String>();
                 String[] palabras = linea.split(",");
                 for (int i = 0; i < palabras.length; i++) {
-                    infoFichero.put(palabras[i], i);
+                    infoFichero.put(palabras[i], palabras[i+1]);
                 }
                 listaInfoFichero.add(infoFichero);
 
